@@ -14,7 +14,7 @@ body {
     background-color:#f0f0f0;
 }
 .container {
-    width: 450px;
+    width: 500px;
     border-radius: 7px;
     background-color:#c7d0d8;
 }
@@ -24,6 +24,10 @@ body {
     padding: 18px 25px;
     border-bottom: 1px solid #e9e5de;
     color: #000;
+}
+.container h3 {
+    font-size: 15px;
+    text-align: end;
 }
 .container .content {
     margin: 25px 20px 35px;
