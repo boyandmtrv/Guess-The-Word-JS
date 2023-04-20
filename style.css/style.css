@@ -79,3 +79,12 @@ body {
 .buttons .check-word {
     background-color:#0ab898;
 }
+
+@media only screen and (max-width: 500px) {
+    .container {
+        display: block;
+        width: 500px;
+        border-radius: 7px;
+        background-color:#c7d0d8;
+    }
+}
