@@ -5,5 +5,73 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color:#f0f0f0;
+}
+.container {
+    width: 450px;
+    border-radius: 7px;
+    background-color:#c7d0d8;
+}
+.container h2 {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 18px 25px;
+    border-bottom: 1px solid #e9e5de;
+    color: #000;
+}
+.container .content {
+    margin: 25px 20px 35px;
+}
+.content .word {
+    font-size: 33px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 24px;
+    margin-right: -24px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.content .details {
+    margin: 25px 0 20px;
+}
+.details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.details p b {
+    font-weight: 500;
+}
+.content input {
+    width: 100%;
+    height: 60px;
+    outline: none;
+    padding: 0 16px;
+    border-radius: 5px;
+    border: 1px solid #c7d0d8;
+}
+.content .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.buttons button {
+    border: none;
+    outline: none;
+    padding: 15px 0;
+    width: calc(100% / 2 - 8px);
+    font-size: 17px;
+    border-radius: 5px;
+    color: #fff;
+}
+.buttons .refresh-word {
+    background-color: #274472;
+}
+.buttons .check-word {
+    background-color:#0ab898;
 }
