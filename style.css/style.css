@@ -78,20 +78,37 @@ body {
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
-  .container {
-   width: 700px;
-   height: 600px;
-  }  
-  .content .word {
-    margin-top: 50px;
+
+  body {
+    background-color: #c7d0d8;
+    touch-action: manipulation;
   }
-  .content .details {
-    margin: 60px 0 20px;
+
+  .container {
+    width: 100%;
+    height: 70rem;
+  }
+  .container h2 {
+    font-size: 60px;
+  }
+  .content .word {
+    margin-top: 80px;
+    font-size: 70px;
+  }
+
+  .details p {
+    margin-top: 80px;
+    font-size: 40px;
   }
   .content input {
-    margin-top: 40px;
+    margin-top: 80px;
+    height: 100px;
+    font-size: 30px;
   }
-  .content .buttons {
-    margin-top: 50px;
+
+  .buttons button {
+   font-size: 40px;
+   margin-top: 40px;
   }
+  
 }
