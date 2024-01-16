@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css/style.css">
+    <link rel="stylesheet" href="style/style.css">
     <script src="./src/app.js" type="module"></script>
-    <script src="./src/storeWords.js" type="module"></script>
     <title>Word Scramble</title>
 </head>
 
 <body>
     <div class="container">
-        <h2>Guess the Word</h2>
+        <h2>Guess the Word Game</h2>
+        <p class="edition">Hard <span>edition</span></p>
         <div class="content">
             <p class="word"></p>
             <div class="details">
-                <p class="hint">Hint: <span><span></p>
                 <p class="time">Time left: <span><b>30</b>s<span></p>
+                <p class="correctWords">Correct words: <span><b>0</b></span></p>
             </div>
-            <input type="text" placeholder="Enter a valid word">
+            <input type="text" placeholder="Enter your guess">
             <div class="buttons">
                 <button class="refresh-word">Refresh word</button>
                 <button class="check-word">Check word</button>
