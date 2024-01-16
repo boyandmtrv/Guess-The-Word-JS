@@ -1,10 +1,8 @@
-import {
-    words
-} from './storeWords.js'
+import getRandomWords from './wordsApi.js';
 
 const wordTxt = document.querySelector('.word');
-const hintTxt = document.querySelector('.hint span');
 const timeTxt = document.querySelector('.time b');
+const correctWordCount = document.querySelector('.correctWords b');
 const inputField = document.querySelector('input');
 const refreshBtn = document.querySelector('.refresh-word');
 const checkBtn = document.querySelector('.check-word');
@@ -26,30 +24,44 @@ const initTimer = maxTime => {
     }, 1000);
 }
 
-let initGame = () => {
+let initGame = async () => {
     initTimer(31);
-    let randomObject = words[Math.floor(Math.random() * words.length)];
-    let wordArr = randomObject.word.split('');
+
+    const randomWords = await getRandomWords();
+
+    if (!randomWords) {
+        return randomWords;
+    };
+
+    let randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+    let wordArr = randomWord.split('');
+
     for (let i = wordArr.length - 1; i > 0; i--) {
-        let w = Math.floor(Math.random() * (i + 1));
-        [wordArr[i], wordArr[w]] = [wordArr[w], wordArr[i]]
-    }
+        let word = Math.floor(Math.random() * (i + 1));
+        [wordArr[i], wordArr[word]] = [wordArr[word], wordArr[i]];
+    };
+
     wordTxt.innerHTML = wordArr.join('');
-    hintTxt.innerHTML = randomObject.hint;
-    correctWord = randomObject.word.toLowerCase();
+    correctWord = randomWord.toLowerCase();
     inputField.value = '';
-    inputField.setAttribute('maxlength', correctWord.length)
-    console.log(randomObject);
+    inputField.setAttribute('maxlength', correctWord.length);
+    console.log(randomWord);
+
+
 }
 initGame();
 
 const checkWord = () => {
     let userWord = inputField.value.toLocaleLowerCase();
-    if (!userWord) return alert('Please enter a valid word!');
-    if (userWord !== correctWord) return alert('Try again!')
+    if (!userWord) {
+        return alert('Please enter a valid word!');
+    }
+    if (userWord !== correctWord) {
+        return alert('Try again!')
+    }
     if (userWord === correctWord) {
         count++;
-        console.log(count);
+        correctWordCount.innerText = count;
     }
     alert(`${correctWord} was the correct word!`);
     initGame();
